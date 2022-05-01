@@ -1,4 +1,7 @@
 vendor/
+node_modules/
+__pycache__
 .env
+.okta.env
 *.swp
 *.vim
