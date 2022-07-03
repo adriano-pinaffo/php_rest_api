@@ -25,16 +25,6 @@
 ENV="$1"
 [ ! -f "$ENV" ] && ENV= || shift
 
-get_token() {
-    curr_dir="$(pwd)"
-    dir="$0"
-    full_path="$curr_dir/$dir"
-    full_dir="$(dirname "$full_path")"
-    get_token="${full_dir}/get_token.sh"
-    token="$(bash $get_token "$ENV")"
-    return
-}
-
 create_headers() {
     for ((i=0; i<${#headers[@]}; i++)); do
         headers_str+=" -H '${headers[$i]}'"
